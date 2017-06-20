@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  "My first post"
+title:  "Python and Go programs for listing all tcp sockets and services"
 date:   2017-06-19 21:17:21 -0400
 categories: jekyll update
 ---
 
-Testing code snippets:
+I wrote two small programs to go through tcp ports 23 to 100 and list the service associated with them. The first one is in Python and the second one is in Go.  
+
+Python
 
 {% highlight python %}
 
@@ -33,6 +35,9 @@ if __name__ == '__main__':
 
 {% endhighlight %}
 
+
+
+Go
 
 {% highlight go %}
 
