@@ -8,20 +8,71 @@ categories: jekyll update
 Testing code snippets:
 
 {% highlight python %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+
+#!/usr/bin/python
+
+import socket
+
+def serviceName():
+
+   for x in range(23, 100):
+       try:
+         protocol = 'tcp'
+         print x
+         service = socket.getservbyport(x, protocol)
+       except socket.error, err_msg:
+           print "%s: %s" %(x, err_msg)
+
+       print "%s" %(service)
+
+   print "service is", service
+
+
+if __name__ == '__main__':
+    serviceName()
+
 {% endhighlight %}
 
 
 {% highlight go %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+
+package main
+
+import (
+    "fmt"
+
+    "honnef.co/go/netdb"
+)
+
+/* func LookupPort(network, service string) (port int, err error)
+
+func GetServByPort(port int, protocol *Protoent) *Servent
+*/
+func main() {
+
+    var proto *netdb.Protoent
+    var serv *netdb.Servent
+
+    proto = netdb.GetProtoByName("tcp")
+
+    for x := 23; x <= 100; x++ {
+
+        serv = netdb.GetServByPort(x, proto)
+        if serv != nil {
+
+            fmt.Println("Service name : ", serv.Name)
+            fmt.Println("Port number : ", x)
+        }
+    }
+    /*
+        if err != nil {
+            fmt.Println("Error: ", err.Error())
+            os.Exit(2)
+        }
+    */
+}
+
+
 {% endhighlight %}
 
 
