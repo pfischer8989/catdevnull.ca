@@ -203,7 +203,7 @@ connection {
 
 ```
 
-After that is done you can break the loop and do a terraform apply again it will actually authenticate and copy everything over for kuberetes.
+After that is done you can break the loop and do a terraform apply again it will actually authenticate and copy everything over for kubernetes.
 
 You can check to see everything is working with kubectl when you move the kubeconfig file it creates to youe ~/.kube/config
 
@@ -216,4 +216,4 @@ srvc503.mylab.local   Ready     4h        v1.6.4+coreos.0
 
 ```
 
-Of course checking a docker ps and a rkt list on the hosts will show you all the containers running kuberetes. Pretty great and the terraform bit is a welcome addition because it sure beats changing or modifing all the matchbox config files by hand.
+Of course checking a docker ps and a rkt list on the hosts will show you all the containers running kubernetes. Pretty great and the terraform bit is a welcome addition because it sure beats changing or modifing all the matchbox config files by hand.
