@@ -11,15 +11,16 @@ They have renamed bootcfg to matchbox in the new releases but it works pretty mu
 
 Your environment needs the following for all this to work:
 
-Matchbox v0.6+ installation with gRPC API enabled
-Matchbox provider credentials client.crt, client.key, and ca.crt
-PXE network boot environment
-Terraform v0.9+ and terraform-provider-matchbox installed locally on your system
-Machines with known DNS names and MAC addresses
+* Matchbox v0.6+ installation with gRPC API enabled
+* Matchbox provider credentials client.crt, client.key, and ca.crt
+* PXE network boot environment
+* Terraform v0.9+ and terraform-provider-matchbox installed locally on your system
+* Machines with known DNS names and MAC addresses
 
 You need to pull down Matchbox
 
 ```
+
 $ git clone https://github.com/coreos/matchbox.git
 $ cd matchbox/examples/terraform/bootkube-install
 
@@ -28,6 +29,7 @@ $ cd matchbox/examples/terraform/bootkube-install
 Once you are in the bootkube-install directory you need to change the terraform.tfvars file to suit your enviroment. Mine looks like this:
 
 ```
+
 # This is the matchbox endpoint
 matchbox_http_endpoint = "http://matchbox.mylab.local:8080"
 matchbox_rpc_endpoint = "matchbox.mylab.local:8081"
@@ -86,6 +88,7 @@ The terraform apply command will generate all the files and put them in your mat
 These are all the files terraform created:
 
 ```
+
 root@util01:/var/lib/matchbox# ls -al *
 assets:
 total 2
@@ -136,6 +139,7 @@ drwxr-xr-x 6 matchbox matchbox   6 May 31 15:30 ..
 Now to start the install you need to reboot the servers and set them to PXE boot.
 
 ```
+
 ipmitool -H <serverIP> -U ADMIN -P ADMIN power off
 ipmitool -H <serverIP> -U ADMIN -P ADMIN chassis bootdev pxe
 ipmitool -H <serverIP> -U ADMIN -P ADMIN power on
