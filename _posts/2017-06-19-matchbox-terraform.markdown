@@ -5,7 +5,7 @@ date:   2017-06-21 21:20:21 -0400
 categories: jekyll update
 ---
 
-So I decided to bare metal install a CoreOS cluster onto three physical Supermicro servers using the new matchbox/terraform packages.This is the announcement from the CoreOS guys (https://coreos.com/blog/matchbox-with-terraform) about it. I have used the bootcfg in the past from CoreOS with success and wanted to see how terraform would fit in the mix.
+So I decided to bare metal install a CoreOS cluster onto three physical Supermicro servers using the new matchbox/terraform packages.This is the announcement from the CoreOS guys (<https://coreos.com/blog/matchbox-with-terraform>) about it. I have used the bootcfg in the past from CoreOS with success and wanted to see how terraform would fit in the mix.
 
 They have renamed bootcfg to matchbox in the new releases but it works pretty much the same way as bootcfg worked. In fact they renamed CoreOS to Container Linux as well. They must have hired some marketing guys. I decided to do the full kubernetes cluster which the CoreOS guys provided a great example called bootkube-install in the matchbox repo.
 
